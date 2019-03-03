@@ -1,15 +1,13 @@
 object ScalaTutorial {
   def main(args: Array[String]){
-
-    var i = 0;
-    for (i <- 1 to 10) {
-      println(i);
+    for (num <- 1 to 10) {
+      println(num);
     }
 
     val randLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    for (i <- 0 until randLetters.length) {
-      println(randLetters(i));
-      
+    for (index <- 0 until randLetters.length) {
+      println(randLetters(index));
+
     }
   }
 }
