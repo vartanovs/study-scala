@@ -7,7 +7,6 @@ object ScalaTutorial {
     val randLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     for (index <- 0 until randLetters.length) {
       println(randLetters(index));
-
     }
   }
 }

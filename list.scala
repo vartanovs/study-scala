@@ -4,5 +4,8 @@ object ScalaTutorial {
     for (item <- myList) {
       println("List Items: " + item)
     }
+
+    var evenList = for { num <- 1 to 20 if (num % 2) == 0 } yield num;
+    println(evenList);
   }
 }
