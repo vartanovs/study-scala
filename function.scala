@@ -12,6 +12,28 @@ object ScalaTutorial {
       }
     }
 
-    printPrimes; // invokes function
+    printPrimes(); // invokes function
+
+    def getSumPrompt() : Unit = {
+      println("Now for a math problem:");
+    }
+
+    getSumPrompt; // invokes procedure
+
+    def getSum(num1: Int = 1, num2: Int = 1): Int = {
+      return num1 + num2;
+    }
+
+    println("5 + 4 = " + getSum(5, 4));
+
+    def sumTotal(nums: Int*): Int = {
+      var sum: Int = 0;
+      for (num <- nums) {
+        sum += num;
+      }
+      return sum;
+    }
+
+    println("Sum total of 1 thru 6: " + sumTotal(1, 2, 3, 4, 5, 6));
   }
 }
