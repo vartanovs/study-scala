@@ -35,5 +35,12 @@ object ScalaTutorial {
     }
 
     println("Sum total of 1 thru 6: " + sumTotal(1, 2, 3, 4, 5, 6));
+
+    def factorial(num: BigInt): BigInt = {
+      if (num <= 1) return num;
+      return num * factorial(num - 1);
+    }
+
+    println("12 factorial is: " + factorial(12))
   }
 }
