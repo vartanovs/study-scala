@@ -1,3 +1,5 @@
+import scala.io.StdIn.{readLine}
+
 object ScalaTutorial {
   def main(args: Array[String]) {
     val startNumber = 1;
