@@ -11,6 +11,10 @@ object ScalaTutorial {
     val spike = new Dog("Spike", "Woof", "Grrr!");
     spike.setName("Spikey");
     println(s"${spike.getName} with id ${spike.id} says ${spike.getSound} and ${spike.getGrowl}");
+
+    val fang = new Wolf("Fang");
+    fang.moveSpeed = 38.0;
+    println(fang.move);
   }
 
   class Animal(var name: String, var sound: String) {
@@ -66,4 +70,15 @@ object ScalaTutorial {
     }
 
   }
+
+  abstract class Mammal(val name: String) {
+    var moveSpeed: Double;
+    def move: String
+  }
+
+  class Wolf(name: String) extends Mammal(name) {
+    var moveSpeed = 35.0;
+    def move = "The wolf %s runs %.2f mph.".format(this.name, this.moveSpeed);
+  }
+
 }
