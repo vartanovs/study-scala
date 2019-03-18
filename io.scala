@@ -1,4 +1,6 @@
 import scala.io.StdIn.{readLine}
+import java.io.PrintWriter
+import scala.io.Source
 
 object ScalaTutorial {
   def main(args: Array[String]) {
@@ -14,5 +16,20 @@ object ScalaTutorial {
     } while (numberGuess != randNumber);
 
     println("You guessed the secret number!");
+
+    val writer = new PrintWriter("test.txt")
+    writer.write("Just some sample text\nSome more sample text");
+    writer.close()
+
+    val textFromFile = Source.fromFile("test.txt", "UTF-8")
+
+    val lineIterator = textFromFile.getLines
+
+    for(line <- lineIterator) {
+      println(line);
+    }
+
+    textFromFile.close()
+
   }
 }
