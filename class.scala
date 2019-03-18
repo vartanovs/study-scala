@@ -15,6 +15,11 @@ object ScalaTutorial {
     val fang = new Wolf("Fang");
     fang.moveSpeed = 38.0;
     println(fang.move);
+
+    val superman = new Superhero("Superman");
+    println(superman.fly);
+    println(superman.hitByBullet);
+    println(superman.ricochets(2500));
   }
 
   class Animal(var name: String, var sound: String) {
@@ -81,4 +86,19 @@ object ScalaTutorial {
     def move = "The wolf %s runs %.2f mph.".format(this.name, this.moveSpeed);
   }
 
+  trait Flyable {
+    def fly: String
+  }
+
+  trait BulletProof {
+    def hitByBullet: String
+    def ricochets(startSpeed: Double): String = {
+        "The bullet ricochets at a speed of %.1f ft/sec.".format(startSpeed * .75);
+    }
+  }
+
+  class Superhero(val name: String) extends Flyable with BulletProof {
+    def fly = "%s flies through the air.".format(this.name);
+    def hitByBullet = "The bullet bounces off of %s.".format(this.name);
+  }
 }
